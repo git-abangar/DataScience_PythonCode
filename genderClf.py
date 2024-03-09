@@ -1,6 +1,7 @@
 from sklearn import tree
 
-classifier = tree.DecisionTreeClassifier()
+clf_decision_tree = tree.DecisionTreeClassifier()
+clf_decision_tree_regressor =  tree.DecisionTreeRegressor()
 
 #[height,weight,shoe size]
 X= [[181,80,44],[177,70,43],[160,60,38],[154,54,37],
@@ -10,8 +11,12 @@ X= [[181,80,44],[177,70,43],[160,60,38],[154,54,37],
     
 Y = ['male','male','female','female','male','male','female','male','male','female','male',]
 
-classifier = classifier.fit(X,Y)
+clf_decision_tree = clf_decision_tree.fit(X,Y)
+clf_decision_tree_regressor = clf_decision_tree_regressor.fit(X,Y)
 
-prediction = classifier.predict([[190,70,43]])
 
-print(prediction)
+predict_decision_tree = clf_decision_tree.predict([[190,70,43]])
+predict_decision_tree_regressor = clf_decision_tree_regressor.predict([[190,70,43]])
+
+print(predict_decision_tree)
+print(predict_decision_tree_regressor)
